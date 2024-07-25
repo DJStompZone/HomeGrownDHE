@@ -1,1 +1,1 @@
-# Homegrown DHE
+# Homegrown Diffie-Hellman Exchange

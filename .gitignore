@@ -3,3 +3,6 @@ venv/
 *.zip
 *.txt
 __pycache__/
+dist/
+*.whl
+*.tar.gz
