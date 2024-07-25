@@ -20,26 +20,26 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-    - name: Install Poetry and poetry2conda
-      run: |
-        curl -sSL https://install.python-poetry.org | python3 -
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
-        pip install poetry2conda
-    - name: Generate environment.yaml
-      run: |
-        poetry2conda pyproject.toml environment.yaml
     - name: Create Conda environment
       run: |
-        conda env create -f environment.yaml
+        conda create --name homegrowndhe python=${{ matrix.python-version }} -y
     - name: Activate Conda environment
       run: |
         source activate homegrowndhe
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+    - name: Install dependencies with Poetry
+      run: |
+        source activate homegrowndhe
+        poetry install
     - name: Lint with flake8
       run: |
         source activate homegrowndhe
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
         source activate homegrowndhe
-        pytest
+        poetry run pytest
