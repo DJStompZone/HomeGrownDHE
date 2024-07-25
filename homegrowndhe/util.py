@@ -5,7 +5,10 @@ from typing import List
 from os import get_terminal_size as gts
 
 def _twidth():
-    return gts().columns
+    try:
+        return gts().columns
+    except OSError:
+        return 40
 
 def twidth():
     try:
