@@ -1,15 +1,19 @@
 [tool.poetry]
 name = "homegrowndhe"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["DJ Stomp <https://github.com/djstompzone>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.10,<4.0"
 pycryptodomex = "^3.20.0"
-
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+verbosity_test_cases = "1"
+log_cli = "true"
+console_output_style = "progress"
