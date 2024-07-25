@@ -1,0 +1,5 @@
+.pytest_cache/
+venv/
+*.zip
+*.txt
+__pycache__/
