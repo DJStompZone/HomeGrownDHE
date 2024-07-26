@@ -1,14 +1,15 @@
 [tool.poetry]
 name = "homegrowndhe"
-version = "0.1.1"
+version = "0.2.2"
 description = ""
-authors = ["DJ Stomp <https://github.com/djstompzone>"]
+authors = ["DJ Stomp <noreply@85457381+djstompzone@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
 pycryptodomex = "^3.20.0"
 poetry2conda = "^0.3.0"
+twine = "^5.1.1"
 
 [build-system]
 requires = ["poetry-core"]
