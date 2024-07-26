@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "homegrowndhe"
-version = "0.3.1"
+version = "0.3.3"
 description = ""
 authors = ["DJ Stomp <noreply@85457381+djstompzone@users.noreply.github.com>"]
 readme = "README.md"
