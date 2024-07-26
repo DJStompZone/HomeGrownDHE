@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "homegrowndhe"
-version = "0.2.2"
+version = "0.3.1"
 description = ""
 authors = ["DJ Stomp <noreply@85457381+djstompzone@users.noreply.github.com>"]
 readme = "README.md"
@@ -10,13 +10,14 @@ python = ">=3.10,<4.0"
 pycryptodomex = "^3.20.0"
 poetry2conda = "^0.3.0"
 twine = "^5.1.1"
+pytest = "^8.3.2"
+cryptography = "^43.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-verbosity_test_cases = "1"
 log_cli = "true"
 console_output_style = "progress"
 
